@@ -1,24 +1,32 @@
-# README
+# Rails projects authentication
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Things you may want to cover:
 
-Things you may want to cover:
+1. Model Associations
+2. Authentication
+3. Routes
+4. Models
 
+# TECHNICAL DOCUMENTATION
+## Pre-requisites
 * Ruby version
+You will need Ruby Version 2.6.5
 
 * System dependencies
+Windows/ Mac
+Rails 6.0.1
 
-* Configuration
+## Installation and running
+Clone project and run
+`bundle install --without production`
+`yarn install`
 
-* Database creation
+ Start the rails server
+`rails serve`
 
-* Database initialization
+## How to contribute and partipate
+Fork this repo and submit a PR for review and potential merge to main branch
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Engineers
+1. [Christian Salazar](https://github.com/Grifo89)
+2. [Edem Agbenyo](https://github.com/edemagbenyo/)
