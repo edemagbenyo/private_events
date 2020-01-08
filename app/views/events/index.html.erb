@@ -1,6 +1,6 @@
 <h2>All User events</h2>
 <ul>
 <% @events.each do |event| %> 
-  <li><%= event.name %></li>
+  <li><%= event.name %> by <%= event.user.class == User ? event.user.name : '-' %></li>
 <% end %>
 </ul>

@@ -18,7 +18,7 @@ class EventsController < ApplicationController
 
   def index
     # user_id
-    @events = User.find_by(id: session[:user_id]).events.all
+    @events = Event.all
     
   end
 end
