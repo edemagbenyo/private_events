@@ -1,3 +1,9 @@
 <% provide(:title, 'User info') %>
 <h1>Showing <%= @user.name %> information</h1>
 
+<h2>User events</h2>
+<ul>
+<% @user.events.each do |event| %> 
+  <li><%= event.name %></li>
+<% end %>
+</ul>
