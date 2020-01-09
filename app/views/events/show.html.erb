@@ -1,3 +1,8 @@
 <h1>Event information</h1>
-
 <p>Event Creator: <%= @event.user.name %></p>
+<h2>Attendees</h2>
+<ul>
+  <% @event.attendances.each do |a| %>
+    <li><%= User.find_by(id: a.user_id).name %></li>
+  <% end %>
+</ul>
