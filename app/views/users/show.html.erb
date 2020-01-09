@@ -1,9 +1,17 @@
 <% provide(:title, 'User info') %>
 <h1>Showing <%= @user.name %> information</h1>
 
-<h2>User events</h2>
+<h2>Attended events</h2>
 <ul>
-<% @user.events.each do |event| %> 
+<% @user.upcoming_events.each do |event| %> 
+  <li><%= event.name %></li>
+<% end %>
+</ul>
+
+
+<h2>Upcoming events</h2>
+<ul>
+<% @user.upcoming_events.each do |event| %> 
   <li><%= event.name %></li>
 <% end %>
 </ul>
