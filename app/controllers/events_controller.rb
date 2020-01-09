@@ -3,8 +3,8 @@ class EventsController < ApplicationController
     @event = Event.new
   end
 
-  def create 
-    @event = Event.new(name: params[:event][:name], location: 'House', event_date: DateTime.now)
+  def create
+    @event = Event.new(name: params[:event][:name], location: params[:event][:location], event_date: params[:event][:event_date])
     @event.build_user(id: session[:user_id])
     if @event.save
       redirect_to @event
@@ -19,6 +19,6 @@ class EventsController < ApplicationController
   def index
     # user_id
     @events = Event.all
-    
+
   end
 end
