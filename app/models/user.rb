@@ -9,7 +9,7 @@ class User < ApplicationRecord
     events = current_user.attendances
     events.each do |event|
       a = Event.find_by(id: event.event_id)
-      return a if a.event_date < DateTime.now
+      return a if a.event_date <= DateTime.now
     end
   end
 
