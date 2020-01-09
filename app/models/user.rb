@@ -6,17 +6,22 @@ class User < ApplicationRecord
   validates :email, presence: true
 
   def upcoming_events
-    events.each do |event|
-      a = Event.find_by(id: event.id)
-      return a if a.event_date < DateTime.now
+    future_events = []
+    attendances.each do |event|
+      a = Event.find_by(id: event.event_id)
+      future_events << a if a.event_date > DateTime.now
     end
+    future_events
   end
 
   def previous_events
-    attended_events.each do |event|
-      a = Event.find_by(id: event.id)
-      return a if a.event_date > DateTime.now
+    past_events = []
+    attendances.each do |event|
+      a = Event.find_by(id: event.event_id)
+      past_events << a if a.event_date < DateTime.now
     end
+    past_events
+    # attendances.where("event_date < DateTime.now")
   end
 
 end

@@ -3,11 +3,10 @@
 
 <h2>Attended events</h2>
 <ul>
-<% @user.upcoming_events.each do |event| %> 
+<% @user.previous_events.each do |event| %> 
   <li><%= event.name %></li>
 <% end %>
 </ul>
-
 
 <h2>Upcoming events</h2>
 <ul>

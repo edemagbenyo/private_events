@@ -1,6 +1,12 @@
-<h2>All User events</h2>
+<h2>Past events</h2>
 <ul>
-<% @events.each do |event| %> 
-  <li><%= event.name %> by <%= event.user.class == User ? event.user.name : '-' %></li>
+<% Event.past.each do |event| %> 
+  <li><%= event.name %> on <%= event.event_date %></li>
+<% end %>
+</ul>
+<h2>Future events</h2>
+<ul>
+<% Event.future.each do |event| %> 
+  <li><%= event.name %> on <%= event.event_date %></li>
 <% end %>
 </ul>
