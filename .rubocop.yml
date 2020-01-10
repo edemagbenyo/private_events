@@ -25,6 +25,8 @@ Style/Documentation:
   Enabled: false
 Style/ClassAndModuleChildren:
   Enabled: false
+Style/GuardClause:
+  Enabled: false
 
 Layout/ExtraSpacing:
   AllowForAlignment: false
