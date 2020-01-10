@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class User < ApplicationRecord
   has_many :events
   has_many :attendances
@@ -23,5 +25,4 @@ class User < ApplicationRecord
     past_events
     # attendances.where("event_date < DateTime.now")
   end
-
 end

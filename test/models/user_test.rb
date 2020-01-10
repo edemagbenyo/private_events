@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
@@ -6,15 +8,15 @@ class UserTest < ActiveSupport::TestCase
   # end
 
   def setup
-    @user = User.new(name: "Example User", email: "user@example.com")
+    @user = User.new(name: 'Example User', email: 'user@example.com')
   end
 
-  test "name should be present" do
-    @user.name =" "
+  test 'name should be present' do
+    @user.name = ' '
     assert_not @user.valid?
   end
-  test "email should be present" do
-    @user.email =" "
+  test 'email should be present' do
+    @user.email = ' '
     assert_not @user.valid?
   end
 end

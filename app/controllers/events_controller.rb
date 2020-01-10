@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class EventsController < ApplicationController
   def new
     @event = Event.new
@@ -12,6 +14,7 @@ class EventsController < ApplicationController
       render 'new'
     end
   end
+
   def show
     @event = Event.find_by(id: params[:id])
   end
@@ -19,6 +22,5 @@ class EventsController < ApplicationController
   def index
     # user_id
     @events = Event.all
-
   end
 end

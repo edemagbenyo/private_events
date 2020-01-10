@@ -1,13 +1,14 @@
-class UsersController < ApplicationController
+# frozen_string_literal: true
 
-  def new 
+class UsersController < ApplicationController
+  def new
     @user = User.new
   end
 
-  def create 
+  def create
     @user = User.new(user_params)
     if @user.save
-      flash[:success] = "Welcome to our private events platform"
+      flash[:success] = 'Welcome to our private events platform'
       redirect_to @user
     else
       render 'new'
@@ -18,13 +19,13 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
-
   def signin(user)
     session[:user_id] = user.id
   end
 
   private
-    def user_params
-      params.require(:user).permit(:name, :email, :password)
-    end
+
+  def user_params
+    params.require(:user).permit(:name, :email, :password)
+  end
 end

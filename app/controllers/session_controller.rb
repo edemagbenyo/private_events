@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class SessionController < ApplicationController
   def signin
     @user = User.new
@@ -15,7 +17,7 @@ class SessionController < ApplicationController
     end
   end
 
-  def log_in user
+  def log_in(user)
     session[:user_id] = user.id
   end
 
@@ -31,6 +33,4 @@ class SessionController < ApplicationController
     cookies.delete(:user_id)
     @user = nil
   end
-
-
 end
