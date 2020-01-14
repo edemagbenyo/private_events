@@ -1,6 +1,5 @@
-# frozen_string_literal: true
-
 class EventsController < ApplicationController
+  before_action :require_login, only: [:new, :create]
   def new
     @event = Event.new
   end
@@ -20,7 +19,18 @@ class EventsController < ApplicationController
   end
 
   def index
-    # user_id
-    @events = Event.all
+    @past_events = Event.past
+    @future_events = Event.future
+  end
+
+  def update
+    @event.attendees.create({user_id: current_user.id})
+    redirect_to show
+  end
+
+  private
+
+  def require_login
+    redirect_to root_path unless logged_in?
   end
 end

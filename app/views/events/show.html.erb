@@ -1,8 +1,18 @@
 <h1>Event information</h1>
 <p>Event Creator: <%= @event.user.name %></p>
+<% unless @event.attended_event?(current_user) %>
+<div class="row">
+  <div class="md-8">
+    <%= form_with  do %>
+      <%= submit_tag "Attend", class: "btn btn-primary" %>
+      <%= link_to "Attend", event_path, method: 'put', class: 'btn btn-primary' %>
+    <% end %>
+  </div>
+</div>
+<% end %>
 <h2>Attendees</h2>
 <ul>
-  <% @event.attendances.each do |a| %>
-    <li><%= User.find_by(id: a.user_id).name %></li>
+  <% @event.attendees.each do |a| %>
+    <li><%= a.name %></li>
   <% end %>
 </ul>

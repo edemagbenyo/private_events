@@ -17,10 +17,6 @@ class SessionController < ApplicationController
     end
   end
 
-  def log_in(user)
-    session[:user_id] = user.id
-  end
-
   def destroy
     log_out if logged_in?
     redirect_to root_url
