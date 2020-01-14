@@ -7,9 +7,15 @@ Rails.application.routes.draw do
   # get  '/users/new',  to: 'users#new'
   # get  'users/show/:id', to: 'users#show'
   # post '/users', to: 'users#create'
-  patch 'events/:id', to: 'event#update'
+  # patch 'events/:id', to: 'event#update'
   resources :users
-  resources :events
+  resources :events do
+    member do 
+     post :attendee
+    end
+  end
+
+  # patch 'events/:id/attend', to: 'event#attend_events'
 
   root 'users#new'
 end

@@ -23,8 +23,9 @@ class EventsController < ApplicationController
     @future_events = Event.future
   end
 
-  def update
-    @event.attendees.create({user_id: current_user.id})
+  def attendee
+    event = Event.find_by(id: params[:event_id])
+    event.attendances.create(user_id: current_user.id)
     redirect_to show
   end
 
