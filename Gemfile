@@ -48,6 +48,9 @@ group :development do
 end
 
 group :test do
+  # The RSpec tenting framework
+  gem 'rspec-rails'
+  # Capybara, the library that allows us to
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 2.15'
   gem 'selenium-webdriver'
