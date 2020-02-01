@@ -1,0 +1,12 @@
+<h2>Past events</h2>
+<ul>
+<% @past_events.each do |event| %>
+  <li><%= link_to event.name, event_path(event.id) %> on <%= event.event_date %></li>
+<% end %>
+</ul>
+<h2>Future events</h2>
+<ul>
+<% @future_events.each do |event| %>
+  <li><%= link_to event.name, event_path(event.id) %> on <%= event.event_date %></li>
+<% end %>
+</ul>

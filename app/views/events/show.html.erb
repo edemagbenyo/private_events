@@ -1,0 +1,18 @@
+<h1>Event information</h1>
+<p>Event Creator: <%= @event.user.name %></p>
+<% unless @event.attended_event?(current_user) %>
+<div class="row">
+  <div class="md-8">
+    <%= form_with(method: 'post', url: attendee_event_path)  do %>
+      <%= submit_tag "Attend", class: "btn btn-primary" %>
+      <%= hidden_field_tag(:event_id, @event.id) %>
+    <% end %>
+  </div>
+</div>
+<% end %>
+<h2>Attendees</h2>
+<ul>
+  <% @event.attendees.each do |a| %>
+    <li><%= a.name %></li>
+  <% end %>
+</ul>
